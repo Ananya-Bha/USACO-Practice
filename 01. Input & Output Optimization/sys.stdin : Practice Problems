@@ -1,0 +1,51 @@
+import sys
+names = sys.stdin.read().splitlines()
+print("The people who attended class today are:")
+for name in names:
+    print(name)
+    
+#---------------------------------#
+#Calculate averages from input
+import sys
+import time
+start = time.perf_counter()
+numbers = sys.stdin.read().splitlines()
+total = 0
+for number in numbers:
+    total += int(number)
+average = total/len(numbers)
+print("The average of the numbers are: ", average)
+end = time.perf_counter()
+print(end-start, "seconds")
+#---------------------------------#
+#Calculate averages from input
+import sys
+import time
+start = time.perf_counter()
+numbers = list(map(int, sys.stdin.read().splitlines()))
+average = total/len(numbers)
+print("The average of the numbers are: ", average)
+end = time.perf_counter()
+print(end-start, "seconds")
+#------------------------------#
+#Take in a list of quantities (lower case/one word/one quantity per line)
+#Print them in order
+#sorted() - New copy (in-place)
+#list.sort() - original list sorted (out-of-place)
+import sys
+quantities = list(map(int, sys.stdin.read().splitlines()))
+quantities.sort()
+sys.stdin.writeline("Quantities in the correct order: ", quantities) #sorted(quantities) <-- Alternative Method + remove line 37
+#------------------------------#
+#Take in a number grid format
+#Store the grid format as a 2d list array of integers
+#Print the 2d list
+#2 4 4 6
+#5 1 9 0
+#4 5 5 6
+#9 1 8 1
+import sys
+grid = map(int,sys.stdin.read().splitlines())
+["2 4 4 6", "5 1 9 0", "4 5 5 6", "9 1 8 1"]
+grid2d = list(map(lambda x: x.split(), grid))
+grid2d = [x.split() for x in grid]
