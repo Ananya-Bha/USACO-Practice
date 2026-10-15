@@ -1,0 +1,119 @@
+'''
+import sys
+A, B = map(int, sys.stdin.readline().split())
+if (A<1 or A>9) or (B<1 or B>9):
+    print(-1)
+else:
+    print(A*B)
+'''
+
+'''
+import sys
+H,W = map(int,sys.stdin.readline().split())
+for i in range(H):
+    if i == 0 or i == H-1:
+        print("#"*W)
+    else:
+        print(f"#{"."*(W-2)}#")
+'''
+
+'''
+import sys
+N, K = map(int,sys.stdin.readline().split())
+count=0
+for num in range(1,N+1):
+    my_number = num
+    sum_of_digits=0
+    while my_number>0:
+        last_digit = my_number%10
+        sum_of_digits+=last_digit
+        my_number=my_number//10
+    if sum_of_digits == K:
+        count+=1
+print(count)
+'''
+
+'''
+import sys
+S = sys.stdin.readline().strip()
+max_length=0
+for i in range (0,len(S)):
+    substring=""
+    for j in range(i,len(S)):
+        substring+=S[j]
+        if substring == substring[::-1]:
+            if len(substring)>max_length:
+                max_length=len(substring)
+print(max_length)
+'''
+
+#Bessie's Lucky Number
+'''
+import sys
+A, B = map(int,sys.stdin.readline().split())
+count=0
+for num in range(A,B+1):
+    my_number=num
+    digit=0
+    while my_number>0:
+        last_digit=my_number%10
+        digit=last_digit
+        my_number=my_number//10
+        if digit == 7:
+            count+=1
+            break
+print(count)
+
+
+#Digital Clock Repair
+import sys
+M, N = map(int,sys.stdin.readline().split())
+count_min=0
+for minute in range(M,N+1):
+    my_minute=minute
+    sum=0
+    while my_minute>0:
+        last_digit=my_minute%10
+        sum+=last_digit
+        my_minute=my_minute//10
+    if sum%2==0:
+        count_min+=1
+print(count_min)
+
+
+#DNA Tagging
+S = input()
+T= input()
+index_pos=0
+appears=0
+for i in range(0,len(S)):
+    substring=""
+    for j in range (i,len(S)):
+        substring+=S[j]
+        if substring == T:
+            index_pos=i
+            appears+=1
+            break
+    if appears==1:
+        break
+    
+if appears==0:
+    print(-1)
+else:
+    print(index_pos)
+
+
+#Palindromic ID Tags
+import sys
+S = sys.stdin.readline().strip()
+length=0
+for i in range(0,len(S)):
+    substring=""
+    for j in range(i,len(S)):
+        substring+=S[j]
+        if substring == substring[::-1]:
+            new_len=len(substring)
+            if new_len>length:
+                length=new_len
+print(length)
+'''
